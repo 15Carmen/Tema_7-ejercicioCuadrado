@@ -2,25 +2,38 @@ package com.company;
 
 public class Cuadrado {
 
-    int lado;
-
-    public Cuadrado (int lado){
+    private int lado;
+    public Cuadrado(int lado){
         this.lado=lado;
     }
 
-    public String toString (){
-        String resultado = "";
-        for (int i = 0; i<lado; i++){
-            for (int j=0; j<lado; j++){
-                resultado="*" + resultado;
+    /**
+     *
+     * @return display el cuadrado pintado con el tamaño de lado del objeto
+     */
+    public String toString() {
+        String display = "";
+//pintamos la base
+        for (int i = 0; i < this.lado; i++) {
+            display += "* ";
+        }
+        display += "\n";
+//pintamos los lados, primero un asteriscos, luego los blancos y al final otro asterisco con el salto de linea
+        for (int i=1; i< this.lado-1; i++) {
+            display += "* ";
+            for (int j = 1; j < this.lado - 1; j++) {
+                display += "  ";
             }
-           resultado= resultado + "*";
+            display += "*\n";
         }
-
-        for (int j=1; j<lado-1; j++){
-            resultado = resultado+ "+\n";
+//pintamos el ultimo lado del cuadrado
+        for (int j = 0; j < this.lado; j++) {
+            display += "* ";
         }
+        display += "\n";
 
-        return resultado;
+        return display;
+
     }
+
 }

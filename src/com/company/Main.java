@@ -3,6 +3,10 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+        Cuadrado cuadrado = new Cuadrado(4);
+        cuadrado.toString();
+
+        System.out.print(cuadrado);
     }
 }
